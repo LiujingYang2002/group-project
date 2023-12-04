@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-info text-white text-center py-4">
+        <h1 class="mt-0 mb-2 mx-5 text-left">Ticket Booking</h1>
+    </header>   
+
+    <div class="container mt-5">
+        
+        <!-- Train Selection Stage -->
+        <div id="trainSelection">
+            <h3>Select a Train</h3>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Search for a train...">
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" data-train="train1">
+                    <div class="d-flex justify-content-between">
+                        <span>10:00 AM to Destination A</span>
+                        <div>
+                            <span>First class: 85$</span>
+                            <span class="badge badge-primary badge-pill">3 seats left</span>
+                            <span>Second class: 76$</span>
+                            <span class="badge badge-primary badge-pill">3 seats left</span>
+                        </div>
+                    </div>
+                </li>
+                <!-- ... other train entries ... -->
+            </ul>
+        </div>
+
+        <!-- Seat Choosing Stage (Initially hidden) -->
+        <div id="seatSelection" style="display: none;">
+            <h3>Choose a Seat</h3><br>
+            <div class="mb-3">
+                <select class="form-control" id="classSelection">
+                    <option value="firstClass" selected>First Class</option>
+                    <option value="normalClass">Normal Class</option>
+                </select>
+            </div>
+
+            <!-- First Class SVG -->
+            <div id="firstClassSVG">
+            <div class="container py-4 d-flex justify-content-center align-items-center">
+                <svg width="400" height="100">
+                    <circle class="table" cx="50" cy="50" r="30" id="set1" fill="red"></circle>
+                    <text x="45" y="55" class="table-number">1</text>
+        
+                    <circle class="table" cx="150" cy="50" r="30" id="set2" fill="green"></circle>
+                    <text x="145" y="55" class="table-number">2</text>
+        
+                    <circle class="table" cx="250" cy="50" r="30" id="set3" fill="green"></circle>
+                    <text x="245" y="55" class="table-number">3</text>
+        
+                    <circle class="table" cx="350" cy="50" r="30" id="set4" fill="green"></circle>
+                    <text x="345" y="55" class="table-number">4</text>
+                </svg>
+            </div></div>
+
+            <!-- Normal Class SVG -->
+            <div style="display: none;" id="normalClassSVG">
+            <div class="container py-4 d-flex justify-content-center align-items-center">
+                <svg width="600" height="100">
+                    <circle class="table" cx="50" cy="50" r="30" id="set1" fill="green"></circle>
+                    <text x="45" y="55" class="table-number">1</text>
+                
+                    <circle class="table" cx="150" cy="50" r="30" id="set2" fill="green"></circle>
+                    <text x="145" y="55" class="table-number">2</text>
+                
+                    <circle class="table" cx="250" cy="50" r="30" id="set3" fill="green"></circle>
+                    <text x="245" y="55" class="table-number">3</text>
+                
+                    <circle class="table" cx="350" cy="50" r="30" id="set4" fill="green"></circle>
+                    <text x="345" y="55" class="table-number">4</text>
+                
+                    <circle class="table" cx="450" cy="50" r="30" id="set5" fill="green"></circle>
+                    <text x="445" y="55" class="table-number">5</text>
+                </svg>
+            </div></div>
+
+            <div class="train-info text-center">
+                <p>10:00 AM to Destination A   85$</p>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-auto ">
+                    <button class="btn btn-secondary" id="backToTrainSelection">Back</button>
+                </div>
+                <div class="col-auto float-right">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer bg-info text-white text-center py-2" style="bottom: 0; position: fixed; width: 100%;">       
+        <p class="m-0">&copy 20075809D CHEN Sinan 23012985X YANG Liujing - EIE4432 Group Project</p>     
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Sample script to switch from train selection to seat selection
+        $('.list-group-item').click(function() {
+            $('#trainSelection').hide();
+            $('#seatSelection').show();
+        });
+
+        // Handle seat selection (toggle class for demo)
+        $('.seat.available').click(function() {
+            $(this).toggleClass('selected');
+        });
+
+        // ... (existing scripts) ...
+
+// Script to switch back to train selection from seat selection
+        $('#backToTrainSelection').click(function() {
+            $('#seatSelection').hide();
+            $('#trainSelection').show();    
+        });
+
+        // ... (existing scripts) ...
+
+        // Script to switch between first class and normal class SVGs
+        $('#classSelection').change(function() {
+            let selectedClass = $(this).val();
+            if (selectedClass === "firstClass") {
+                $('#firstClassSVG').show();
+                $('#normalClassSVG').hide();
+            } else {
+                $('#firstClassSVG').hide();
+                $('#normalClassSVG').show();
+            }
+        });
+
+    </script>
+    <style>
+        .seat {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #000;
+        }
+        .seat.available {
+            background-color: #4CAF50;
+        }
+        .seat.occupied {
+            background-color: #f44336;
+        }
+        .seat.selected {
+            background-color: #FFD700;
+        }
+        .road {
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+        }
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</body>
+</html>

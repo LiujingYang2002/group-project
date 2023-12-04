@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Seat Management</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script src="scripts/Seat-management.js"></script>
+  <style>
+    .booked {
+      fill: red;
+      stroke: black;
+      stroke-width: 2;
+      cursor: not-allowed;
+    }
+    .first-class {
+      fill: green;
+      stroke: black;
+      stroke-width: 2;
+      cursor: pointer;
+    }
+    .economy {
+      fill: orange;
+      stroke: black;
+      stroke-width: 2;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="bg-info text-white text-center py-4">
+        <h1 class="mt-0 mb-2 mx-5 text-left">Seat Management</h1>
+    </header>   
+
+  <div class="container text-center mx-auto mt-3 mb-3 ">
+    </div>
+    <div class="container text-center">
+    <svg height="300" width="550">
+      <circle class="first-class" cx="50" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="1"></circle>
+      <circle class="first-class" cx="100" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="2"></circle>        
+      <circle class="first-class" cx="50" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="1"></circle>
+      <circle class="first-class" cx="100" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="2"></circle>
+      <circle class="first-class" cx="150" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="3"></circle>
+      <circle class="first-class" cx="200" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="4"></circle>
+      <circle class="first-class" cx="250" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="5"></circle>
+      <circle class="first-class" cx="300" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="6"></circle>
+      <circle class="first-class" cx="350" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="7"></circle>
+      <circle class="first-class" cx="400" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="8"></circle>
+      <circle class="first-class" cx="450" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="9"></circle>
+      <circle class="first-class" cx="500" cy="100" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="10"></circle>
+      <!-- Economy Seats -->
+      <circle class="economy" cx="50" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="11"></circle>
+      <circle class="economy" cx="100" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="12"></circle>
+      <circle class="economy" cx="150" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="13"></circle>
+      <circle class="economy" cx="200" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="14"></circle>
+      <circle class="economy" cx="250" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="15"></circle>
+      <circle class="economy" cx="300" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="16"></circle>
+      <circle class="economy" cx="350" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="17"></circle>
+      <circle class="economy" cx="400" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="18"></circle>
+      <circle class="economy" cx="450" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="19"></circle>
+      <circle class="economy" cx="500" cy="150" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="20"></circle>
+      <circle class="economy" cx="50" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="21"></circle>
+      <circle class="economy" cx="100" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="22"></circle>
+      <circle class="economy" cx="150" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="23"></circle>
+      <circle class="economy" cx="200" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="24"></circle>
+      <circle class="economy" cx="250" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="25"></circle>
+      <circle class="economy" cx="300" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="26"></circle>
+      <circle class="economy" cx="350" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="27"></circle>
+      <circle class="economy" cx="400" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="28"></circle>
+      <circle class="economy" cx="450" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="29"></circle>
+      <circle class="economy" cx="500" cy="200" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="30"></circle>
+      <circle class="economy" cx="50" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="31"></circle>
+      <circle class="economy" cx="100" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="32"></circle>
+      <circle class="economy" cx="150" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="33"></circle>
+      <circle class="economy" cx="200" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="34"></circle>
+      <circle class="economy" cx="250" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="35"></circle>
+      <circle class="economy" cx="300" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="36"></circle>
+      <circle class="economy" cx="350" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="37"></circle>
+      <circle class="economy" cx="400" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="38"></circle>
+      <circle class="economy" cx="450" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="39"></circle>
+      <circle class="economy" cx="500" cy="250" r="15" stroke="black" stroke-width="2px" cursor="pointer" id="40"></circle>
+    </svg>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="mb-3" id="confirmation">
+        <h4>click the seat to change the Booking status</h4>
+        <div class="row justify-content-between">
+            <div class="col-auto ">
+                <button class="btn btn-secondary" id="backToTrainSelection">Back</button>
+            </div>
+            <div class="col-auto float-right">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</body>
+
+
+
+</html>
